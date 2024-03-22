@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/soovitus.css">
+    <title>Filmi Soovitus</title>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg bg-body-tertiary bg-black">
+        <div class="container-fluid">
+          <a class="navbar-brand fs-3 text-success" href="index.html">KINO</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active text-white" aria-current="page" href="kinokava.html">Kinokava</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white" href="filmid.html">Filmid</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white" href="filtrid.html">Filtrid</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white" href="soovitus.html">Saa filmi soovitusi</a>
+              </li>
+            </ul>
+            
+          </div>
+        </div>
+    </nav>
+
+
+   <main>
+      <h1>Vali filme, mida oled vaadanud:</h1>
+    <form id="movieForm">
+    <input type="checkbox" id="movie1" name="movie" value="The Avengers">
+    <label for="movie1" >The Avengers</label><br>
+    <input type="checkbox" id="movie2" name="movie" value="The Godfather">
+    <label for="movie2" >The Godfather</label><br>
+    <input type="checkbox" id="movie3" name="movie" value="Interstellar">
+    <label for="movie3" >Interstellar</label><br>
+    <input type="checkbox" id="movie4" name="movie" value="The Lord of the Rings: The Two Towers">
+    <label for="movie4" >The Lord of the Rings: The Two Towers</label><br>
+    <input type="checkbox" id="movie5" name="movie" value="Harry Potter and the Prisoner of Azkaban">
+    <label for="movie5" >Harry Potter and the Prisoner of Azkaban</label><br>
+    <input type="checkbox" id="movie6" name="movie" value="Puss in Boots: The Last Wish">
+    <label for="movie6" >Puss in Boots: The Last Wish</label><br>
+    <input type="checkbox" id="movie7" name="movie" value="Coco">
+    <label for="movie7" >Coco</label><br>
+    <input type="checkbox" id="movie8" name="movie" value="Toy Story 2">
+    <label for="movie8" >Toy Story 2</label><br>
+    <input type="checkbox" id="movie9" name="movie" value="Tangled ">
+    <label for="movie9" >Tangled </label><br>
+    <input type="checkbox" id="movie10" name="movie" value="Gifted ">
+    <label for="movie10" >Gifted </label><br>
+    <input type="checkbox" id="movie11" name="movie" value="The Wolf of Wall Street">
+    <label for="movie11" >The Wolf of Wall Street</label><br>
+    <input type="checkbox" id="movie12" name="movie" value="Love, Simon">
+    <label for="movie12" >Love, Simon</label><br>
+    <input type="checkbox" id="movie13" name="movie" value="Inside Out">
+    <label for="movie13" >Inside Out</label><br>
+    <input type="checkbox" id="movie14" name="movie" value="Cruella">
+    <label for="movie14" >Cruella</label><br>
+    <input type="checkbox" id="movie15" name="movie" value="Kingsman: The Secret Service">
+    <label for="movie15" >Kingsman: The Secret Service</label><br>
+    <input type="checkbox" id="movie16" name="movie" value="Green Book">
+    <label for="movie16" >Green Book</label><br>
+    <input type="checkbox" id="movie17" name="movie" value="Top Gun: Maverick">
+    <label for="movie17" >Top Gun: Maverick</label><br>
+    <input type="checkbox" id="movie18" name="movie" value="Remi, Nobody's Boy">
+    <label for="movie18" >Remi, Nobody's Boy</label><br>
+    <input type="checkbox" id="movie19" name="movie" value="The Hate U Give">
+    <label for="movie19" >The Hate U Give</label><br>
+    <input type="checkbox" id="movie20" name="movie" value="Raya and the Last Dragon">
+    <label for="movie20" >Raya and the Last Dragon</label><br>
+    <input type="checkbox" id="movie21" name="movie" value="Finding Nemo">
+    <label for="movie21" >Finding Nemo</label><br>
+    <input type="checkbox" id="movie22" name="movie" value="Groundhog Day">
+    <label for="movie22" >Groundhog Day</label><br>
+    <input type="checkbox" id="movie23" name="movie" value="Avatar">
+    <label for="movie23" >Avatar</label><br>
+    <input type="checkbox" id="movie24" name="movie" value="Hamilton">
+    <label for="movie24" >Hamilton</label><br>
+    <input type="checkbox" id="movie25" name="movie" value="Argentina, 1985">
+    <label for="movie25" >Argentina, 1985</label><br>
+    <input type="checkbox" id="movie26" name="movie" value="Jaws">
+    <label for="movie26" >Jaws</label><br>
+    <input type="checkbox" id="movie27" name="movie" value="Evil Dead II">
+    <label for="movie27" >Evil Dead II</label><br>
+    <input type="checkbox" id="movie28" name="movie" value="Halloween">
+    <label for="movie28" >Halloween</label><br>
+    <input type="checkbox" id="movie29" name="movie" value="Five Feet Apart">
+    <label for="movie29" >Five Feet Apart</label><br>
+    <input type="checkbox" id="movie30" name="movie" value="Purple Hearts">
+    <label for="movie30" >Purple Hearts</label><br>
+    <input type="checkbox" id="movie31" name="movie" value="Me Before You">
+    <label for="movie31" >Me Before You</label><br>
+    <input type="checkbox" id="movie32" name="movie" value="Inception">
+    <label for="movie32" >Inception</label><br>
+    <input type="checkbox" id="movie33" name="movie" value="The Matrix">
+    <label for="movie33" >The Matrix</label><br>
+    <input type="checkbox" id="movie34" name="movie" value="Starstruck ">
+    <label for="movie34" > Starstruck </label><br>
+    <input type="checkbox" id="movie35" name="movie" value="Sabrina the Teenage Witch ">
+    <label for="movie35" >Sabrina the Teenage Witch </label><br>
+    <input type="checkbox" id="movie36" name="movie" value="Blue Lagoon: The Awakening ">
+    <label for="movie36" >Blue Lagoon: The Awakening </label><br>
+    <input type="checkbox" id="movie37" name="movie" value="Room ">
+    <label for="movie37" >Room </label><br>
+    <input type="checkbox" id="movie38" name="movie" value="Nobody ">
+    <label for="movie38" >Nobody </label><br>
+    <input type="checkbox" id="movie39" name="movie" value="The Great Dictator ">
+    <label for="movie39" >The Great Dictator </label><br>
+    <input type="checkbox" id="movie40" name="movie" value="Ayla: The Daughter of War ">
+    <label for="movie40" >Ayla: The Daughter of War </label><br>
+    <input type="checkbox" id="movie41" name="movie" value="Jurassic Park ">
+    <label for="movie41" >Jurassic Park </label><br>
+    <input type="submit" value="Soovita filme">
+
+  </form>
+
+  <div id="recommendations">
+    <h2>Soovitatavad filmid:</h2>
+    <ul id="recommendedMovies"></ul>
+  </div>
+  
+</main>
+  
+    
+    <script src="scripts/soovitus.js"></script>
+</body>
+</html>

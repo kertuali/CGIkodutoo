@@ -1,0 +1,134 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+
+.float-right {
+    float: right;
+}
+
+.tab {
+    overflow: hidden;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    margin-left: 2rem;
+    margin-right: 2rem;
+    margin-bottom: 2rem;
+    margin-top: 2rem;
+  }
+  
+
+  .tab button {
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+  }
+  
+  
+  .tab button:hover {
+    background-color: #479b43;
+  }
+  
+ 
+  .tab button.active {
+    background-color: #0b331c79;
+  }
+  
+  .tabcontent {
+    display: none;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-top: none;
+  }
+
+  .float-right {
+    float: right;
+}
+
+
+
+.row {
+    margin-right: 2rem;
+    margin-left: 2rem;
+    margin-bottom: 2rem;
+}
+
+.filtersnupp{
+    margin-left: 5rem;
+    margin-bottom: 2rem;
+    height: 40px;
+    width: 100px;
+    border-radius: 10px;
+    background-color: #78b175;
+    border: none;
+    font-weight: 100;
+}
+
+#filters {
+    margin-bottom: 2rem;
+    margin-left: 5rem;
+    margin-right: 5rem;
+    font-weight: 100;
+    border: 1px solid black;
+    
+}
+
+
+.vanusepiirang{
+    font-weight: 400;  
+    display: inline-table;
+    width: auto;
+    color: rgb(66, 24, 145);
+    margin: 1rem;
+}
+
+.keel {
+    font-weight: 400;
+    display: inline-table;
+    width: auto;
+    color: #81239479;
+    margin: 1rem;
+}
+
+.algusaeg {
+    font-weight: 400;
+    display: inline-table;
+    color: brown;
+    margin: 1rem;
+}
+
+.zanr{
+    font-weight: 400;
+    display: inline-table;
+    margin: 1rem;
+    color: red;
+}
+
+.showall {
+    font-weight: 400;
+    display: inline-table;
+    margin: 1rem;
+    color: rgb(15, 101, 26);
+}
+
+.list-group-item label:hover {
+    background-color: rgba(128, 128, 128, 0.384);
+    cursor: pointer;
+}
+
+.list-group-item.active {
+    color: black;
+}
+
+footer{
+    margin-right: 2rem;
+    margin-left: 2rem;
+}

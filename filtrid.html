@@ -1,0 +1,849 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/kava.css">
+    <title>Kava</title>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg bg-body-tertiary bg-black">
+        <div class="container-fluid">
+          <a class="navbar-brand fs-3 text-success" href="index.html">KINO</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active text-white" aria-current="page" href="kinokava.html">Kinokava</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white" href="filmid.html">Filmid</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white" href="filtrid.html">Filtrid</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white" href="soovitus.html">Saa filmi soovitusi</a>
+              </li>
+            </ul>
+            
+          </div>
+        </div>
+    </nav>
+
+      <main>
+        
+        <button class="filtersnupp" onclick="ShowAndHide()">Näita Filtreid</button>
+        <div id="myBtnContainer">
+
+            <button class="btn active" onclick="filterSelection('all')">Kõik</button>
+            <button class="btn" onclick="filterSelection('allaKaksteistKeelatud')"> Alla 12 keelatud </button>
+            <button class="btn" onclick="filterSelection('allaKaksteistKeelatud')"> Alla 14 keelatud </button>
+            <button class="btn" onclick="filterSelection('lubatudKoigile')"> Lubatud kõigile </button>
+            <button class="btn" onclick="filterSelection('kaheksateistPluss')"> 18+ </button>
+
+            <button class="btn" onclick="filterSelection('eestikeel')"> Eesti keel </button>
+            <button class="btn" onclick="filterSelection('inglisekeel')"> Inglise keel </button>
+            <button class="btn" onclick="filterSelection('venekeel')"> Vene keel </button>
+
+            <button class="btn" onclick="filterSelection('kaheksa')"> 8:00 </button>
+            <button class="btn" onclick="filterSelection('uheksa')"> 9:00 </button>
+            <button class="btn" onclick="filterSelection('kymme')"> 10:00 </button>
+            <button class="btn" onclick="filterSelection('yksteist')"> 11:00 </button>
+            <button class="btn" onclick="filterSelection('kaksteist')"> 12:00 </button>
+            <button class="btn" onclick="filterSelection('kolmteist')"> 13:00 </button>
+            <button class="btn" onclick="filterSelection('neliteist')"> 14:00 </button>
+            <button class="btn" onclick="filterSelection('viisteist')"> 15:00 </button>
+            <button class="btn" onclick="filterSelection('kuusteist')"> 16:00 </button>
+            <button class="btn" onclick="filterSelection('seitseteist')"> 17:00 </button>
+            <button class="btn" onclick="filterSelection('kaheksateist')"> 18:00 </button>
+            <button class="btn" onclick="filterSelection('yheksateist')"> 19:00 </button>
+            <button class="btn" onclick="filterSelection('kakskymmend')"> 20:00 </button>
+            <button class="btn" onclick="filterSelection('kakskendyks')"> 21:00 </button>
+            <button class="btn" onclick="filterSelection('kakskendkaks')"> 22:00 </button>
+            <button class="btn" onclick="filterSelection('kakskendkolm')"> 23:00 </button>
+            <button class="btn" onclick="filterSelection('nullnull')"> 00:00 </button>
+
+            <button class="btn" onclick="filterSelection('komoodia')"> Komöödia </button>
+            <button class="btn" onclick="filterSelection('seiklus')"> Seiklus </button>
+            <button class="btn" onclick="filterSelection('marul')"> Märul </button>
+            <button class="btn" onclick="filterSelection('animatsioon')"> Animatsioon </button>
+            <button class="btn" onclick="filterSelection('ulme')"> Ulme </button>
+            <button class="btn" onclick="filterSelection('draama')"> Draama </button>
+            <button class="btn" onclick="filterSelection('pere')"> Pere </button>
+            <button class="btn" onclick="filterSelection('oudus')"> Õudus </button>
+            <button class="btn" onclick="filterSelection('fantaasia')"> Fantaasia </button>
+            <button class="btn" onclick="filterSelection('soda')"> Sõda </button>
+            <button class="btn" onclick="filterSelection('ponevik')"> Põnevik </button>
+            <button class="btn" onclick="filterSelection('romantika')"> Romantika </button>
+            <button class="btn" onclick="filterSelection('krimi')"> Krimi </button>
+            <button class="btn" onclick="filterSelection('telefilm')"> Telefilm </button>
+            <button class="btn" onclick="filterSelection('ajalugu')"> Ajalugu </button>
+
+            <button class="btn" onclick="filterSelection('esmaspaev')"> Esmaspäev </button>
+            <button class="btn" onclick="filterSelection('teisipaev')"> Teisipäev </button>
+            <button class="btn" onclick="filterSelection('kolmapaev')"> Kolmapäev </button>
+            <button class="btn" onclick="filterSelection('neljapaev')"> Neljapäev </button>
+            <button class="btn" onclick="filterSelection('reede')"> Reede </button>
+            <button class="btn" onclick="filterSelection('laupaev')"> Laupäev </button>
+            <button class="btn" onclick="filterSelection('puhapaev')"> Pühapäev </button>
+
+        </div>
+
+        <div class="container">
+
+            <div class="filterDiv esmaspaev eestikeel fantaasia seiklus telefilm kaheksa allaNeliteistKeelatud" id="voyagers">
+                <img src="https://media.themoviedb.org/t/p/w300_and_h450_bestv2/38N7GRJLu7IWyEdil96YobJ5LWM.jpg" alt="Voyager">
+                <h5 class="film-title">The Voyagers</h5>
+                <p class="film-time">Esmaspäev algusega 8:00</p>
+                <button class="osta" href="#">Ota Pilet</button>
+            </div>
+
+            <div class="filterDiv esmaspaev eestikeel animatsioon marul seiklus ulme uheksa allaKaksteistKeelatud" id="spiderman">
+                <img src="https://media.themoviedb.org/t/p/w300_and_h450_bestv2/iiZZdoQBEYBv6id8su7ImL0oCbD.jpg" alt="spiderman" >
+                <h5 class="film-title">Spider-Man: Into the Spider-Verse</h5>
+                <p class="film-time">Esmaspäev algusega 9:00</p>
+                <button class="osta" href="#">Ota Pilet</button>
+            </div>
+
+            <div class="filterDiv esmaspaev inglisekeel fantaasia seiklus marul kymme kaheksateistPluss">
+                <img src="https://media.themoviedb.org/t/p/w300_and_h450_bestv2/sMp34cNKjIb18UBOCoAv4DpCxwY.jpg" alt="damsel">
+                <h5 class="film-title">Damsel</h5>
+                <p class="film-time">Esmaspäev algusega 10:00</p>
+                <button class="osta" href="#">Ota Pilet</button>
+            </div>
+
+            <div class="filterDiv esmaspaev venekeel ulme romantika komoodia yksteist kaheksateistPluss">
+                <img src="https://media.themoviedb.org/t/p/w300_and_h450_bestv2/kCGlIMHnOm8JPXq3rXM6c5wMxcT.jpg" alt="poor things">
+                <h5 class="film-title">Poor Things</h5>
+                <p class="film-time">Esmaspäev algusega 11:00</p>
+                <button class="osta" href="#">Ota Pilet</button>
+            </div>
+
+            <div class="filterDiv esmaspaev inglisekeel romantika komoodia seiklus kaksteist kaheksateistPluss">
+                <img src="https://media.themoviedb.org/t/p/w300_and_h450_bestv2/z3SeS4wjKQ3TjHSvRidovGJbHYb.jpg" alt="adventures">
+                <h5 class="film-title">The Adventures</h5>
+                <p class="film-time">Esmaspäev algusega 12:00</p>
+                <button class="osta" href="#">Ota Pilet</button>
+            </div>
+               
+            <div class="filterDiv esmaspaev venekeel draama ajalugu soda kolmteist kaheksateistPluss">
+                <img src="https://media.themoviedb.org/t/p/w300_and_h450_bestv2/vcZWJGvB5xydWuUO1vaTLI82tGi.jpg" alt="napoleon">
+                <h5 class="film-title"> Napoleon</h5>
+                <p class="film-time">Esmaspäev algusega 13:30</p>
+                <button class="osta" href="#">Ota Pilet</button>
+            </div>
+            
+            <div class="filterDiv esmaspaev eestikeel draama ajalugu soda neliteist kaheksateistPluss">
+                <img src="https://media.themoviedb.org/t/p/w300_and_h450_bestv2/vcZWJGvB5xydWuUO1vaTLI82tGi.jpg" alt="napoleon">
+                <h5 class="film-title">Napoleon</h5>
+                <p class="film-time">Esmaspäev algusega 14:30</p>
+                <button class="osta" href="#">Ota Pilet</button>
+            </div>
+
+            <div class="filterDiv esmaspaev eestikeel fantaasia seiklus marul kuusteist kaheksateistPluss">
+                <img src="https://media.themoviedb.org/t/p/w300_and_h450_bestv2/sMp34cNKjIb18UBOCoAv4DpCxwY.jpg" alt="damsel">
+                <h5 class="film-title">Damsel</h5>
+                <p class="film-time">Esmaspäev algusega 16:00</p>
+                <button class="osta" href="#">Ota Pilet</button>
+            </div>
+
+            <div class="filterDiv esmaspaev inglisekeel marul oudus ponevik seitseteist allaNeliteistKeelatud">
+                <img src="https://media.themoviedb.org/t/p/w300_and_h450_bestv2/hu40Uxp9WtpL34jv3zyWLb5zEVY.jpg" alt="nowayup">
+                <h5 class="film-title">No Way Up</h5>
+                <p class="film-time">Esmaspäev algusega 17:00</p>
+                <button class="osta" href="#">Ota Pilet</button>
+            </div>
+
+            <div class="filterDiv esmaspaev eestikeel marul oudus ponevik kaheksateist kaheksateistPluss">
+                <img src="https://media.themoviedb.org/t/p/w300_and_h450_bestv2/qGz5rffXhegQH5PGUDiObqoOt06.jpg" alt="octogames">
+                <h5 class="film-title">The OctoGames</h5>
+                <p class="film-time">Esmaspäev algusega 18:00</p>
+                <button class="osta" href="#">Ota Pilet</button>
+            </div>
+
+            <div class="filterDiv esmaspaev venekeel fantaasia seiklus telefilm kaheksateist allaNeliteistKeelatud ">
+                <img src="https://media.themoviedb.org/t/p/w300_and_h450_bestv2/38N7GRJLu7IWyEdil96YobJ5LWM.jpg" alt="Voyager">
+                <h5 class="film-title">The Voyagers</h5>
+                <p class="film-time">Esmaspäev algusega 18:30</p>
+                <button class="osta" href="#">Ota Pilet</button>
+            </div>
+
+            <div class="filterDiv esmaspaev inglisekeel animatsioon marul seiklus ulme yheksateist allaKaksteistKeelatud">
+                <img src="https://media.themoviedb.org/t/p/w300_and_h450_bestv2/iiZZdoQBEYBv6id8su7ImL0oCbD.jpg" alt="spiderman" >
+                <h5 class="film-title"> Spider-Man: Into the Spider-Verse</h5>
+                <p class="film-time">Esmaspäev algusega 19:30</p>
+                <button class="osta" href="#">Ota Pilet</button>
+            </div>
+
+            <div class="filterDiv esmaspaev inglisekeel ulme romantika komoodia kakskymmend kaheksateistPluss">
+                <img src="https://media.themoviedb.org/t/p/w300_and_h450_bestv2/kCGlIMHnOm8JPXq3rXM6c5wMxcT.jpg" alt="poor things">
+                <h5 class="film-title">Poor Things</h5>
+                <p class="film-time">Esmaspäev algusega 20:00</p>
+                <button class="osta" href="#">Ota Pilet</button>
+            </div>
+
+            <div class="filterDiv esmaspaev eestikeel ulme marul krimi kakskendyks kaheksateistPluss">
+                <img src="https://media.themoviedb.org/t/p/w300_and_h450_bestv2/hhvMTxlTZtnCOe7YFhod9uz3m37.jpg" alt="codeeight">
+                <h5 class="film-title">Code 8 Part II</h5>
+                <p class="film-time">Esmaspäev algusega 21:30</p>
+                <button class="osta" href="#">Ota Pilet</button>
+            </div>
+
+            <div class="filterDiv esmaspaev inglisekeel oudus draama kakskendkaks kaheksateistPluss">
+                <img src="https://media.themoviedb.org/t/p/w300_and_h450_bestv2/asCLy4s7HYP3zSRlLP4Qgme5L0A.jpg" alt="fear">
+                <h5 class="film-title">Fear</h5>
+                <p class="film-time">Esmaspäev algusega 22:30</p>
+                <button class="osta" href="#">Ota Pilet</button>
+            </div>
+
+            <div class="filterDiv esmaspaev venekeel fantaasia seiklus marul kakskendkolmkaheksateistPluss">
+                <img src="https://media.themoviedb.org/t/p/w300_and_h450_bestv2/sMp34cNKjIb18UBOCoAv4DpCxwY.jpg" alt="damsel">
+                <h5 class="film-title">Damsel</h5>
+                <p class="film-time">Esmaspäev algusega 23:20</p>
+                <button class="osta" href="#">Ota Pilet</button>
+            </div>
+
+            <div class="filterDiv esmaspaev eestikeel romantika komoodia seiklus kaksteist kaheksateistPluss">
+                <img src="https://media.themoviedb.org/t/p/w300_and_h450_bestv2/z3SeS4wjKQ3TjHSvRidovGJbHYb.jpg" alt="adventures">
+                <h5 class="film-title">The Adventures</h5>
+                <p class="film-time">Esmaspäev algusega 00:00</p>
+                <button class="osta" href="#">Ota Pilet</button>
+            </div>
+
+
+
+
+
+            <div class="filterDiv teisipaev eestikeel komoodia seiklus kaheksa kaheksateistPluss">
+                <img src="https://media.themoviedb.org/t/p/w300_and_h450_bestv2/iuFNMS8U5cb6xfzi51Dbkovj7vM.jpg" alt="barbie">
+                <h5 class="film-title">Barbie</h5>
+                <p class="film-time">Teisipäev algusega 8:00</p>
+                <button class="osta" href="#">Ota Pilet</button>
+            </div>
+
+            <div class="filterDiv teisipaev inglisekeel animatsioon marul seiklus ulme uheksa allaKaksteistKeelatud">
+                <img src="https://media.themoviedb.org/t/p/w300_and_h450_bestv2/iiZZdoQBEYBv6id8su7ImL0oCbD.jpg" alt="spiderman" >
+                <h5 class="film-title">Spider-Man: Into the Spider-Verse</h5>
+                <p class="film-time">Teisipäev algusega 9:00</p>
+                <button class="osta" href="#">Ota Pilet</button>
+            </div>
+
+            <div class="filterDiv teisipaev inglisekeel animatsioon pere draama kymme lubatudKoigile">
+                <img src="https://media.themoviedb.org/t/p/w300_and_h450_bestv2/sKCr78MXSLixwmZ8DyJLrpMsd15.jpg" alt="lionking">
+                <h5 class="film-title">The Lion King</h5>
+                <p class="film-time">Teisipäev algusega 10:00</p>
+                <button class="osta" href="#">Ota Pilet</button>
+            </div>
+
+            <div class="filterDiv teisipaev venekeel animatsioon pere komoodia fantaasia romantika seiklus yksteist lubatudKoigile">
+                <img src="https://media.themoviedb.org/t/p/w300_and_h450_bestv2/4Y1WNkd88JXmGfhtWR7dmDAo1T2.jpg" alt="elemental">
+                <h5 class="film-title">Elemental</h5>
+                <p class="film-time">Teisipäev algusega 11:00</p>
+                <button class="osta" href="#">Ota Pilet</button>
+            </div>
+
+            <div class="filterDiv teisipaev eestikeel romantika komoodia seiklus yksteist kaheksateistPluss">
+                <img src="https://media.themoviedb.org/t/p/w300_and_h450_bestv2/z3SeS4wjKQ3TjHSvRidovGJbHYb.jpg" alt="adventures">
+                <h5 class="film-title">The Adventures</h5>
+                <p class="film-time">Teisipäev algusega 11:30</p>
+                <button class="osta" href="#">Ota Pilet</button>
+            </div>
+
+            <div class="filterDiv teisipaev eestikeel animatsioon pere komoodia fantaasia romantika seiklus kolmteist lubatudKoigile">
+                <img src="https://media.themoviedb.org/t/p/w300_and_h450_bestv2/4Y1WNkd88JXmGfhtWR7dmDAo1T2.jpg" alt="elemental">
+                <h5 class="film-title">Elemental</h5>
+                <p class="film-time">Teisipäev algusega 13:00</p>
+                <button class="osta" href="#">Ota Pilet</button>
+            </div>
+
+            <div class="filterDiv teisipaev inglisekeel draama ajalugu soda neliteist kaheksateistPluss">
+                <img src="https://media.themoviedb.org/t/p/w300_and_h450_bestv2/vcZWJGvB5xydWuUO1vaTLI82tGi.jpg" alt="napoleon">
+                <h5 class="film-title">Napoleon</h5>
+                <p class="film-time">Teisipäev algusega 14:30</p>
+                <button class="osta" href="#">Ota Pilet</button>
+            </div>
+               
+            <div class="filterDiv teisipaev eestikeel animatsioon pere fantaasia neliteist lubatudKoigile">
+                <img src="https://media.themoviedb.org/t/p/w300_and_h450_bestv2/39wmItIWsg5sZMyRUHLkWBcuVCM.jpg" alt="spiritedaway">
+                <h5 class="film-title">Spirited Away</h5>
+                <p class="film-time">Teisipäev algusega 14:50</p>
+                <button class="osta" href="#">Ota Pilet</button>
+            </div>
+               
+            <div class="filterDiv teisipaev inglisekeel ulme marul krimi seitseteist kaheksateistPluss">
+                <img src="https://media.themoviedb.org/t/p/w300_and_h450_bestv2/hhvMTxlTZtnCOe7YFhod9uz3m37.jpg" alt="codeeight">
+                <h5 class="film-title">Code 8 Part II</h5>
+                <p class="film-time">Teisipäev algusega 17:00</p>
+                <button class="osta" href="#">Ota Pilet</button>
+            </div>
+            
+            <div class="filterDiv teisipaev inglisekeel marul oudus ponevik kaheksateist kaheksateistPluss">
+                <img src="https://media.themoviedb.org/t/p/w300_and_h450_bestv2/qGz5rffXhegQH5PGUDiObqoOt06.jpg" alt="octogames">
+                <h5 class="film-title">The OctoGames</h5>
+                <p class="film-time">Teisipäev algusega 18:00</p>
+                <button class="osta" href="#">Ota Pilet</button>
+            </div>  
+
+            <div class="filterDiv teisipaev eestikeel ulme romantika komoodia kaheksateist kaheksateistPluss">
+                <img src="https://media.themoviedb.org/t/p/w300_and_h450_bestv2/kCGlIMHnOm8JPXq3rXM6c5wMxcT.jpg" alt="poor things">
+                <h5 class="film-title">Poor Things</h5>
+                <p class="film-time">Teisipäev algusega 18:50</p>
+                <button class="osta" href="#">Ota Pilet</button>
+            </div>
+
+            <div class="filterDiv teisipaev inglisekeel fantaasia seiklus marul yheksateist kaheksateistPluss">
+                <img src="https://media.themoviedb.org/t/p/w300_and_h450_bestv2/sMp34cNKjIb18UBOCoAv4DpCxwY.jpg" alt="damsel">
+                <h5 class="film-title">Damsel</h5>
+                <p class="film-time">Teisipäev algusega 19:30</p>
+                <button class="osta" href="#">Ota Pilet</button>
+            </div>
+
+            <div class="filterDiv teisipaev inglisekeel ulme romantika komoodia kakskendyks kaheksateistPluss">
+                <img src="https://media.themoviedb.org/t/p/w300_and_h450_bestv2/kCGlIMHnOm8JPXq3rXM6c5wMxcT.jpg" alt="poor things">
+                <h5 class="film-title">Poor Things</h5>
+                <p class="film-time">Teisipäev algusega 21:20</p>
+                <button class="osta" href="#">Ota Pilet</button>
+            </div>
+
+            <div class="filterDiv teisipaev eestikeel fantaasia seiklus telefilm kakskendyks allaNeliteistKeelatud ">
+                <img src="https://media.themoviedb.org/t/p/w300_and_h450_bestv2/38N7GRJLu7IWyEdil96YobJ5LWM.jpg" alt="Voyager">
+                <h5 class="film-title">The Voyagers</h5>
+                <p class="film-time">Teisipäev algusega 21:20</p>
+                <button class="osta" href="#">Ota Pilet</button>
+            </div>
+
+            <div class="filterDiv teisipaev venekeel oudus draama kakskendkaks kaheksateistPluss">
+                <img src="https://media.themoviedb.org/t/p/w300_and_h450_bestv2/asCLy4s7HYP3zSRlLP4Qgme5L0A.jpg" alt="fear">
+                <h5 class="film-title">Fear</h5>
+                <p class="film-time">Teisipäev algusega 22:30</p>
+                <button class="osta" href="#">Ota Pilet</button>
+            </div>
+
+            <div class="filterDiv teisipaev inglisekeel draama ajalugu soda kakskendkolm kaheksateistPluss">
+                <img src="https://media.themoviedb.org/t/p/w300_and_h450_bestv2/vcZWJGvB5xydWuUO1vaTLI82tGi.jpg" alt="napoleon">
+                <h5 class="film-title">Napoleon</h5>
+                <p class="film-time">Teisipäev algusega 23:10</p>
+                <button class="osta" href="#">Ota Pilet</button>
+            </div>
+
+            <div class="filterDiv teisipaev inglisekeel komoodia seiklus nullnull kaheksateistPluss">
+                <img src="https://media.themoviedb.org/t/p/w300_and_h450_bestv2/iuFNMS8U5cb6xfzi51Dbkovj7vM.jpg" alt="barbie">
+                <h5 class="film-title">Barbie</h5>
+                <p class="film-time">Teisipäev algusega 00:00</p>
+                <button class="osta" href="#">Ota Pilet</button>
+            </div>
+
+
+
+
+
+
+
+            <div class="filterDiv kolmapaev venekeel marul oudus ponevik kaheksa allaNeliteistKeelatud">
+                <img src="https://media.themoviedb.org/t/p/w300_and_h450_bestv2/hu40Uxp9WtpL34jv3zyWLb5zEVY.jpg" alt="nowayup">
+                <h5 class="film-title">No Way Up</h5>
+                <p class="film-time">Kolmapäev algusega 8:00</p>
+                <button class="osta" href="#">Ota Pilet</button>
+            </div>
+
+            <div class="filterDiv kolmapaev inglisekeel marul seiklus animatsioon komoodia pere uheksa lubatudKoigile">
+                <img src="https://media.themoviedb.org/t/p/w300_and_h450_bestv2/kDp1vUBnMpe8ak4rjgl3cLELqjU.jpg" alt="kungfupanda">
+                <h5 class="film-title">Kung Fu Panda 4</h5>
+                <p class="film-time">Kolmapäev algusega 9:00</p>
+                <button class="osta" href="#">Ota Pilet</button>
+            </div>
+
+            <div class="filterDiv kolmapaev eestikeel oudus draama kymme kaheksateistPluss">
+                <img src="https://media.themoviedb.org/t/p/w300_and_h450_bestv2/asCLy4s7HYP3zSRlLP4Qgme5L0A.jpg" alt="fear">
+                <h5 class="film-title">Fear</h5>
+                <p class="film-time">Kolmapäev algusega 10:30</p>
+                <button class="osta" href="#">Ota Pilet</button>
+            </div>
+
+            <div class="filterDiv kolmapaev eestikeel animatsioon pere komoodia fantaasia romantika seiklus kymme lubatudKoigile">
+                <img src="https://media.themoviedb.org/t/p/w300_and_h450_bestv2/4Y1WNkd88JXmGfhtWR7dmDAo1T2.jpg" alt="elemental">
+                <h5 class="film-title">Elemental</h5>
+                <p class="film-time">Kolmapäev algusega 10:40</p>
+                <button class="osta" href="#">Ota Pilet</button>
+            </div>
+
+            <div class="filterDiv kolmapaev eestikeel animatsioon pere fantaasia kaksteist lubatudKoigile">
+                <img src="https://media.themoviedb.org/t/p/w300_and_h450_bestv2/39wmItIWsg5sZMyRUHLkWBcuVCM.jpg" alt="spiritedaway">
+                <h5 class="film-title">Spirited Away</h5>
+                <p class="film-time">Kolmapäev algusega 12:10</p>
+                <button class="osta" href="#">Ota Pilet</button>
+            </div>
+
+            <div class="filterDiv kolmapaev venekeel animatsioon pere draama kolmteist lubatudKoigile">
+                <img src="https://media.themoviedb.org/t/p/w300_and_h450_bestv2/sKCr78MXSLixwmZ8DyJLrpMsd15.jpg" alt="lionking">
+                <h5 class="film-title">The Lion King</h5>
+                <p class="film-time">Kolmapäev algusega 13:00</p>
+                <button class="osta" href="#">Ota Pilet</button>
+            </div>
+
+            <div class="filterDiv kolmapaev inglisekeel fantaasia seiklus marul neliteist kaheksateistPluss">
+                <img src="https://media.themoviedb.org/t/p/w300_and_h450_bestv2/sMp34cNKjIb18UBOCoAv4DpCxwY.jpg" alt="damsel">
+                <h5 class="film-title">Damsel</h5>
+                <p class="film-time">Kolmapäev algusega 14:20</p>
+                <button class="osta" href="#">Ota Pilet</button>
+            </div>
+
+            <div class="filterDiv kolmapaev inglisekeel animatsioon pere fantaasia neliteist lubatudKoigile">
+                <img src="https://media.themoviedb.org/t/p/w300_and_h450_bestv2/39wmItIWsg5sZMyRUHLkWBcuVCM.jpg" alt="spiritedaway">
+                <h5 class="film-title">Spirited Away</h5>
+                <p class="film-time">Kolmapäev algusega 14:30</p>
+                <button class="osta" href="#">Ota Pilet</button>
+            </div>
+
+            <div class="filterDiv kolmapaev inglisekeel romantika komoodia seiklus kuusteist kaheksateistPluss">
+                <img src="https://media.themoviedb.org/t/p/w300_and_h450_bestv2/z3SeS4wjKQ3TjHSvRidovGJbHYb.jpg" alt="adventures">
+                <h5 class="film-title">The Adventures</h5>
+                <p class="film-time">Kolmapäev algusega 16:20</p>
+                <button class="osta" href="#">Ota Pilet</button>
+            </div>
+
+            <div class="filterDiv kolmapaev inglisekeel marul oudus ponevik kaheksateist allaNeliteistKeelatud">
+                <img src="https://media.themoviedb.org/t/p/w300_and_h450_bestv2/hu40Uxp9WtpL34jv3zyWLb5zEVY.jpg" alt="nowayup">
+                <h5 class="film-title">No Way Up</h5>
+                <p class="film-time">Kolmapäev algusega 18:00</p>
+                <button class="osta" href="#">Ota Pilet</button>
+            </div>
+
+            <div class="filterDiv kolmapaev inglisekeel ulme romantika komoodia kaheksateist kaheksateistPluss">
+                <img src="https://media.themoviedb.org/t/p/w300_and_h450_bestv2/kCGlIMHnOm8JPXq3rXM6c5wMxcT.jpg" alt="poor things">
+                <h5 class="film-title">Poor Things</h5>
+                <p class="film-time">Kolmapäev algusega 18:50</p>
+                <button class="osta" href="#">Ota Pilet</button>
+            </div>
+
+            <div class="filterDiv kolmapaev venekeel komoodia seiklus yheksateist kaheksateistPluss">
+                <img src="https://media.themoviedb.org/t/p/w300_and_h450_bestv2/iuFNMS8U5cb6xfzi51Dbkovj7vM.jpg" alt="barbie">
+                <h5 class="film-title">Barbie</h5>
+                <p class="film-time">Kolmapäev algusega 19:30</p>
+                <button class="osta" href="#">Ota Pilet</button>
+            </div>
+
+            <div class="filterDiv kolmapaev inglisekeel komoodia seiklus kakskendyks kaheksateistPluss">
+                <img src="https://media.themoviedb.org/t/p/w300_and_h450_bestv2/iuFNMS8U5cb6xfzi51Dbkovj7vM.jpg" alt="barbie">
+                <h5 class="film-title">Barbie</h5>
+                <p class="film-time">Kolmapäev algusega 21:20</p>
+                <button class="osta" href="#">Ota Pilet</button>
+            </div>
+
+            <div class="filterDiv kolmapaev eestikeel animatsioon marul seiklus ulme kakskendyks allaKaksteistKeelatud">
+                <img src="https://media.themoviedb.org/t/p/w300_and_h450_bestv2/iiZZdoQBEYBv6id8su7ImL0oCbD.jpg" alt="spiderman" >
+                <h5 class="film-title">Spider-Man: Into the Spider-Verse</h5>
+                <p class="film-time">Kolmapäev algusega 21:30</p>
+                <button class="osta" href="#">Ota Pilet</button>
+            </div>
+
+            <div class="filterDiv kolmapaev inglisekeel oudus draama kakskendkolm kaheksateistPluss">
+                <img src="https://media.themoviedb.org/t/p/w300_and_h450_bestv2/asCLy4s7HYP3zSRlLP4Qgme5L0A.jpg" alt="fear">
+                <h5 class="film-title">Fear</h5>
+                <p class="film-time">Kolmapäev algusega 23:20</p>
+                <button class="osta" href="#">Ota Pilet</button>
+            </div>
+
+            <div class="filterDiv kolmapaev inglisekeel draama ajalugu soda kakskendkolm kaheksateistPluss">
+                <img src="https://media.themoviedb.org/t/p/w300_and_h450_bestv2/vcZWJGvB5xydWuUO1vaTLI82tGi.jpg" alt="napoleon">
+                <h5 class="film-title">Napoleon</h5>
+                <p class="film-time">Kolmapäev algusega 23:10</p>
+                <button class="osta" href="#">Ota Pilet</button>
+            </div>
+
+
+
+
+
+
+
+
+            <div class="filterDiv neljapaev venekeel fantaasia seiklus telefilm kaheksa allaNeliteistKeelatud ">
+                <img src="https://media.themoviedb.org/t/p/w300_and_h450_bestv2/38N7GRJLu7IWyEdil96YobJ5LWM.jpg" alt="Voyager">
+                <h5 class="film-title">The Voyagers</h5>
+                <p class="film-time">Neljapäev algusega 8:00</p>
+                <button class="osta" href="#">Ota Pilet</button>
+            </div> 
+
+            <div class="filterDiv neljapaev eestikeel marul seiklus animatsioon komoodia pere uheksa lubatudKoigile">
+                <img src="https://media.themoviedb.org/t/p/w300_and_h450_bestv2/kDp1vUBnMpe8ak4rjgl3cLELqjU.jpg" alt="kungfupanda">
+                <h5 class="film-title">Kung Fu Panda 4</h5>
+                <p class="film-time">Neljapäev algusega 9:00</p>
+                <button class="osta" href="#">Ota Pilet</button>
+            </div>
+
+            <div class="filterDiv neljapaev eestikeel marul oudus ponevik uheksa kaheksateistPluss">
+                <img src="https://media.themoviedb.org/t/p/w300_and_h450_bestv2/qGz5rffXhegQH5PGUDiObqoOt06.jpg" alt="octogames">
+                <h5 class="film-title">The OctoGames</h5>
+                <p class="film-time">Neljapäev algusega 9:50</p>
+                <button class="osta" href="#">Ota Pilet</button>
+            </div> 
+
+            <div class="filterDiv neljapaev inglisekeel animatsioon pere komoodia fantaasia romantika seiklus kymme lubatudKoigile">
+                <img src="https://media.themoviedb.org/t/p/w300_and_h450_bestv2/4Y1WNkd88JXmGfhtWR7dmDAo1T2.jpg" alt="elemental">
+                <h5 class="film-title">Elemental</h5>
+                <p class="film-time">Neljapäev algusega 10:40</p>
+                <button class="osta" href="#">Ota Pilet</button>
+            </div>
+
+            <div class="filterDiv neljapaev eestikeel marul seiklus komoodia yksteist allaKaksteistKeelatud">
+                <img src="https://media.themoviedb.org/t/p/w300_and_h450_bestv2/95VlSEfLMqeX36UVcHJuNlWEpwf.jpg" alt="argylle">
+                <h5 class="film-title">Argylle</h5>
+                <p class="film-time">Neljapäev algusega 11:20</p>
+                <button class="osta" href="#">Ota Pilet</button>
+            </div>
+
+            <div class="filterDiv neljapaev inglisekeel animatsioon pere draama kolmteist lubatudKoigile">
+                <img src="https://media.themoviedb.org/t/p/w300_and_h450_bestv2/sKCr78MXSLixwmZ8DyJLrpMsd15.jpg" alt="lionking">
+                <h5 class="film-title">The Lion King</h5>
+                <p class="film-time">Neljapäev algusega 13:00</p>
+                <button class="osta" href="#">Ota Pilet</button>
+            </div>
+
+            <div class="filterDiv neljapaev venekeel marul seiklus komoodia kolmteist allaKaksteistKeelatud">
+                <img src="https://media.themoviedb.org/t/p/w300_and_h450_bestv2/95VlSEfLMqeX36UVcHJuNlWEpwf.jpg" alt="argylle">
+                <h5 class="film-title">Argylle</h5>
+                <p class="film-time">Neljapäev algusega 13:40</p>
+                <button class="osta" href="#">Ota Pilet</button>
+            </div>
+
+            <div class="filterDiv neljapaev inglisekeel komoodia romantika neliteist kaheksateistPluss">
+                <img src="https://media.themoviedb.org/t/p/w300_and_h450_bestv2/5qHoazZiaLe7oFBok7XlUhg96f2.jpg" alt="anyonebutyou">
+                <h5 class="film-title">Anyone But You</h5>
+                <p class="film-time">Neljapäev algusega 14:30</p>
+                <button class="osta" href="#">Ota Pilet</button>
+            </div>
+
+            <div class="filterDiv neljapaev eestikeel komoodia romantika kuusteist kaheksateistPluss">
+                <img src="https://media.themoviedb.org/t/p/w300_and_h450_bestv2/5qHoazZiaLe7oFBok7XlUhg96f2.jpg" alt="anyonebutyou">
+                <h5 class="film-title">Anyone But You</h5>
+                <p class="film-time">Neljapäev algusega 16:00</p>
+                <button class="osta" href="#">Ota Pilet</button>
+            </div>
+
+            <div class="filterDiv neljapaev inglisekeel ulme marul krimi kuusteist kaheksateistPluss">
+                <img src="https://media.themoviedb.org/t/p/w300_and_h450_bestv2/hhvMTxlTZtnCOe7YFhod9uz3m37.jpg" alt="codeeight">
+                <h5 class="film-title">Code 8 Part II</h5>
+                <p class="film-time">Neljapäev algusega 16:20</p>
+                <button class="osta" href="#">Ota Pilet</button>
+            </div>
+
+            <div class="filterDiv neljapaev venekeel marul seiklus ulme fantaasia draama kaheksateist allaNeliteistKeelatud">
+                <img src="https://media.themoviedb.org/t/p/w300_and_h450_bestv2/wShcJSKMFg1Dy1yq7kEZuay6pLS.jpg" alt="sriashi">
+                <h5 class="film-title">Sri Asih</h5>
+                <p class="film-time">Neljapäev algusega 18:00</p>
+                <button class="osta" href="#">Ota Pilet</button>
+            </div>
+
+            <div class="filterDiv neljapaev inglisekeel marul seiklus ulme fantaasia draama kaheksateist allaNeliteistKeelatud">
+                <img src="https://media.themoviedb.org/t/p/w300_and_h450_bestv2/wShcJSKMFg1Dy1yq7kEZuay6pLS.jpg" alt="sriashi">
+                <h5 class="film-title">Sri Asih</h5>
+                <p class="film-time">Neljapäev algusega 18:10</p>
+                <button class="osta" href="#">Ota Pilet</button>
+            </div>
+
+            <div class="filterDiv neljapaev eestikeel komoodia seiklus kakskymmend kaheksateistPluss">
+                <img src="https://media.themoviedb.org/t/p/w300_and_h450_bestv2/iuFNMS8U5cb6xfzi51Dbkovj7vM.jpg" alt="barbie">
+                <h5 class="film-title">Barbie</h5>
+                <p class="film-time">Neljapäev algusega 20:20</p>
+                <button class="osta" href="#">Ota Pilet</button>
+            </div>
+
+            <div class="filterDiv venekeel animatsioon marul seiklus ulme kakskymmend allaKaksteistKeelatud">
+                <img src="https://media.themoviedb.org/t/p/w300_and_h450_bestv2/iiZZdoQBEYBv6id8su7ImL0oCbD.jpg" alt="spiderman" >
+                <h5 class="film-title">Spider-Man: Into the Spider-Verse</h5>
+                <p class="film-time">Neljapäev algusega 20:30</p>
+                <button class="osta" href="#">Ota Pilet</button>
+            </div>
+
+            <div class="filterDiv neljapaev eestikeel marul seiklus ulme fantaasia draama kakskendkolm allaNeliteistKeelatud">
+                <img src="https://media.themoviedb.org/t/p/w300_and_h450_bestv2/wShcJSKMFg1Dy1yq7kEZuay6pLS.jpg" alt="sriashi">
+                <h5 class="film-title">Sri Asih</h5>
+                <p class="film-time">Neljapäev algusega 23:20</p>
+                <button class="osta" href="#">Ota Pilet</button>
+            </div>
+
+            <div class="filterDiv neljapaev inglisekeel animatsioon pere komoodia fantaasia romantika seiklus kakskendkolm lubatudKoigile">
+                <img src="https://media.themoviedb.org/t/p/w300_and_h450_bestv2/4Y1WNkd88JXmGfhtWR7dmDAo1T2.jpg" alt="elemental">
+                <h5 class="film-title">Elemental</h5>
+                <p class="film-time">Neljapäev algusega 23:10</p>
+                <button class="osta" href="#">Ota Pilet</button>
+            </div>
+                    
+            
+                
+                
+
+            <div class="filterDiv reede venekeel marul seiklus komoodia kaheksa allaKaksteistKeelatud">
+                <img src="https://media.themoviedb.org/t/p/w300_and_h450_bestv2/95VlSEfLMqeX36UVcHJuNlWEpwf.jpg" alt="argylle">
+                <h5 class="film-title">Argylle</h5>
+                <p class="film-time">Reede algusega 8:00</p>
+                <button class="osta" href="#">Ota Pilet</button>
+            </div>
+
+            <div class="filterDiv reede inglisekeel animatsioon marul seiklus ulme uheksa allaKaksteistKeelatud">
+                <img src="https://media.themoviedb.org/t/p/w300_and_h450_bestv2/iiZZdoQBEYBv6id8su7ImL0oCbD.jpg" alt="spiderman" >
+                <h5 class="film-title">Spider-Man: Into the Spider-Verse</h5>
+                <p class="film-time">Reede algusega 9:00</p>
+                <button class="osta" href="#">Ota Pilet</button>
+            </div>
+
+            <div class="filterDiv reede eestikeel animatsioon pere draama kymme lubatudKoigile">
+                <img src="https://media.themoviedb.org/t/p/w300_and_h450_bestv2/sKCr78MXSLixwmZ8DyJLrpMsd15.jpg" alt="lionking">
+                <h5 class="film-title">The Lion King</h5>
+                <p class="film-time">Reede algusega 10:20</p>
+                <button class="osta" href="#">Ota Pilet</button>
+            </div>
+
+            <div class="filterDiv eestikeel animatsioon pere komoodia fantaasia romantika seiklus yksteist lubatudKoigile">
+                <img src="https://media.themoviedb.org/t/p/w300_and_h450_bestv2/4Y1WNkd88JXmGfhtWR7dmDAo1T2.jpg" alt="elemental">
+                <h5 class="film-title">Elemental</h5>
+                <p class="film-time">Reede algusega 11:00</p>
+                <button class="osta" href="#">Ota Pilet</button>
+            </div>
+
+            <div class="filterDiv reede inglisekeel marul seiklus komoodia yksteist allaKaksteistKeelatud">
+                <img src="https://media.themoviedb.org/t/p/w300_and_h450_bestv2/95VlSEfLMqeX36UVcHJuNlWEpwf.jpg" alt="argylle">
+                <h5 class="film-title">Argylle</h5>
+                <p class="film-time">Reede algusega 11:50</p>
+                <button class="osta" href="#">Ota Pilet</button>
+            </div>
+
+            <div class="filterDiv reede venekeel marul seiklus ulme fantaasia draama kolmteist allaNeliteistKeelatud">
+                <img src="https://media.themoviedb.org/t/p/w300_and_h450_bestv2/wShcJSKMFg1Dy1yq7kEZuay6pLS.jpg" alt="sriashi">
+                <h5 class="film-title">Sri Asih</h5>
+                <p class="film-time">Reede algusega 13:00</p>
+                <button class="osta" href="#">Ota Pilet</button>
+            </div>
+
+            <div class="filterDiv reede eestikeel seiklus ulme kolmteist allaNeliteistKeelatud">
+                <img src="https://media.themoviedb.org/t/p/w300_and_h450_bestv2/d5NXSklXo0qyIYkgV94XAgMIckC.jpg" alt="dune">
+                <h5 class="film-title">Dune</h5>
+                <p class="film-time">Reede algusega 13:40</p>
+                <button class="osta" href="#">Ota Pilet</button>
+            </div>
+
+            <div class="filterDiv reede inglisekeel ponevik ulme viisteist kaheksateistPluss">
+                <img src="https://media.themoviedb.org/t/p/w300_and_h450_bestv2/tVMddOS5bi3YPVPgTPlEw0TOWoF.jpg" alt="meteor">
+                <h5 class="film-title">Meteor</h5>
+                <p class="film-time">Reede algusega 15:20</p>
+                <button class="osta" href="#">Ota Pilet</button>
+            </div>
+
+            <div class="filterDiv reede venekeel komoodia romantika kuusteist kaheksateistPluss">
+                <img src="https://media.themoviedb.org/t/p/w300_and_h450_bestv2/5qHoazZiaLe7oFBok7XlUhg96f2.jpg" alt="anyonebutyou">
+                <h5 class="film-title">Anyone But You</h5>
+                <p class="film-time">Reede algusega 16:40</p>
+                <button class="osta" href="#">Ota Pilet</button>
+            </div>
+
+            <div class="filterDiv reede eestikeel ulme marul krimi seitseteist kaheksateistPluss">
+                <img src="https://media.themoviedb.org/t/p/w300_and_h450_bestv2/hhvMTxlTZtnCOe7YFhod9uz3m37.jpg" alt="codeeight">
+                <h5 class="film-title">Code 8 Part II</h5>
+                <p class="film-time">Reede algusega 17:00</p>
+                <button class="osta" href="#">Ota Pilet</button>
+            </div>
+
+            <div class="filterDiv reede venekeel ponevik ulme kaheksateist kaheksateistPluss">
+                <img src="https://media.themoviedb.org/t/p/w300_and_h450_bestv2/tVMddOS5bi3YPVPgTPlEw0TOWoF.jpg" alt="meteor">
+                <h5 class="film-title">Meteor</h5>
+                <p class="film-time">Reede algusega 18:00</p>
+                <button class="osta" href="#">Ota Pilet</button>
+            </div>
+
+            <div class="filterDiv reede inglisekeel komoodia romantika kaheksateist kaheksateistPluss">
+                <img src="https://media.themoviedb.org/t/p/w300_and_h450_bestv2/5qHoazZiaLe7oFBok7XlUhg96f2.jpg" alt="anyonebutyou">
+                <h5 class="film-title">Anyone But You</h5>
+                <p class="film-time">Reede algusega 18:10</p>
+                <button class="osta" href="#">Ota Pilet</button>
+            </div>
+
+
+            <div class="filterDiv reede venekeel komoodia seiklus yheksateist kaheksateistPluss">
+                <img src="https://media.themoviedb.org/t/p/w300_and_h450_bestv2/iuFNMS8U5cb6xfzi51Dbkovj7vM.jpg" alt="barbie">
+                <h5 class="film-title">Barbie</h5>
+                <p class="film-time">Reede algusega 19:30</p>
+                <button class="osta" href="#">Ota Pilet</button>
+            </div>
+
+            <div class="filterDiv reede inglisekeel seiklus ulme kakskymmend allaNeliteistKeelatud">
+                <img src="https://media.themoviedb.org/t/p/w300_and_h450_bestv2/d5NXSklXo0qyIYkgV94XAgMIckC.jpg" alt="dune">
+                <h5 class="film-title">Dune</h5>
+                <p class="film-time">Reede algusega 20:00</p>
+                <button class="osta" href="#">Ota Pilet</button>
+            </div>
+                   
+                   
+            <div class="filterDiv reede eestikeel romantika komoodia seiklus kakskendkolm kaheksateistPluss">
+                <img src="https://media.themoviedb.org/t/p/w300_and_h450_bestv2/z3SeS4wjKQ3TjHSvRidovGJbHYb.jpg" alt="adventures">
+                <h5 class="film-title">The Adventures</h5>
+                <p class="film-time">Reede algusega 23:20</p>
+                <button class="osta" href="#">Ota Pilet</button>
+            </div> 
+            
+            <div class="filterDiv reede eestikeel ponevik ulme kakskendkolm kaheksateistPluss">
+                <img src="https://media.themoviedb.org/t/p/w300_and_h450_bestv2/tVMddOS5bi3YPVPgTPlEw0TOWoF.jpg" alt="meteor">
+                <h5 class="film-title">Meteor</h5>
+                <p class="film-time">Reede algusega 23:10</p>
+                <button class="osta" href="#">Ota Pilet</button>
+            </div>
+                    
+                   
+                    
+                
+
+
+            <div class="filterDiv laupaev eestikeel animatsioon pere komoodia fantaasia romantika seiklus yksteist lubatudKoigile">
+                <img src="https://media.themoviedb.org/t/p/w300_and_h450_bestv2/4Y1WNkd88JXmGfhtWR7dmDAo1T2.jpg" alt="elemental">
+                <h5 class="film-title">Elemental</h5>
+                <p class="film-time">Laupäev algusega 11:00</p>
+                <button class="osta" href="#">Ota Pilet</button>
+            </div>
+
+            <div class="filterDiv laupaev inglisekeel marul seiklus komoodia yksteist allaKaksteistKeelatud">
+                <img src="https://media.themoviedb.org/t/p/w300_and_h450_bestv2/95VlSEfLMqeX36UVcHJuNlWEpwf.jpg" alt="argylle">
+                <h5 class="film-title">Argylle</h5>
+                <p class="film-time">Laupäev algusega 11:10</p>
+                <button class="osta" href="#">Ota Pilet</button>
+            </div>
+
+            <div class="filterDiv laupaev eestikeel komoodia romantika kolmteist kaheksateistPluss">
+                <img src="https://media.themoviedb.org/t/p/w300_and_h450_bestv2/5qHoazZiaLe7oFBok7XlUhg96f2.jpg" alt="anyonebutyou">
+                <h5 class="film-title">Anyone But You</h5>
+                <p class="film-time">Laupäev algusega 13:00</p>
+                <button class="osta" href="#">Ota Pilet</button>
+            </div>
+
+            <div class="filterDiv laupaev venekeel marul seiklus ulme fantaasia draama kolmteist allaNeliteistKeelatud">
+                <img src="https://media.themoviedb.org/t/p/w300_and_h450_bestv2/wShcJSKMFg1Dy1yq7kEZuay6pLS.jpg" alt="sriashi">
+                <h5 class="film-title">Sri Asih</h5>
+                <p class="film-time">Laupäev algusega 13:40</p>
+                <button class="osta" href="#">Ota Pilet</button>
+            </div>
+
+            <div class="filterDiv laupaev inglisekeel seiklus ulme viisteist allaNeliteistKeelatud">
+                <img src="https://media.themoviedb.org/t/p/w300_and_h450_bestv2/d5NXSklXo0qyIYkgV94XAgMIckC.jpg" alt="dune">
+                <h5 class="film-title">Dune</h5>
+                <p class="film-time">Laupäev algusega 15:00</p>
+                <button class="osta" href="#">Ota Pilet</button>
+            </div>
+
+            <div class="filterDiv laupaev inglisekeel marul seiklus animatsioon komoodia pere kuusteist lubatudKoigile">
+                <img src="https://media.themoviedb.org/t/p/w300_and_h450_bestv2/kDp1vUBnMpe8ak4rjgl3cLELqjU.jpg" alt="kungfupanda">
+                <h5 class="film-title">Kung Fu Panda 4</h5>
+                <p class="film-time">Laupäev algusega 16:00</p>
+                <button class="osta" href="#">Ota Pilet</button>
+            </div>
+
+            <div class="filterDiv laupaev venekeel marul seiklus animatsioon komoodia pere kuusteist lubatudKoigile">
+                <img src="https://media.themoviedb.org/t/p/w300_and_h450_bestv2/kDp1vUBnMpe8ak4rjgl3cLELqjU.jpg" alt="kungfupanda">
+                <h5 class="film-title">Kung Fu Panda 4</h5>
+                <p class="film-time">Laupäev algusega 16:40</p>
+                <button class="osta" href="#">Ota Pilet</button>
+            </div>
+            
+            <div class="filterDiv laupaev inglisekeel ulme romantika komoodia seitseteist kaheksateistPluss">
+                <img src="https://media.themoviedb.org/t/p/w300_and_h450_bestv2/kCGlIMHnOm8JPXq3rXM6c5wMxcT.jpg" alt="poor things">
+                <h5 class="film-title">Poor Things</h5>
+                <p class="film-time">Laupäev algusega 17:40</p>
+                <button class="osta" href="#">Ota Pilet</button>
+            </div>
+                   
+            <div class="filterDiv laupaev inglisekeel komoodia romantika kaheksateist kaheksateistPluss">
+                <img src="https://media.themoviedb.org/t/p/w300_and_h450_bestv2/5qHoazZiaLe7oFBok7XlUhg96f2.jpg" alt="anyonebutyou">
+                <h5 class="film-title">Anyone But You</h5>
+                <p class="film-time">Laupäev algusega 18:20</p>
+                <button class="osta" href="#">Ota Pilet</button>
+            </div>
+
+            <div class="filterDiv laupaev inglisekeel ulme seiklus draama kakskymmend kaheksateistPluss">
+                <img src="https://media.themoviedb.org/t/p/w300_and_h450_bestv2/f46WvKEsBn98WJbPJcO47ZoKn6B.jpg" alt="Spaceman">
+                <h5 class="film-title">Spaceman</h5>
+                <p class="film-time">Laupäev algusega 20:20</p>
+                <button class="osta" href="#">Ota Pilet</button>
+            </div>
+
+            <div class="filterDiv laupaev eestikeel animatsioon pere fantaasia kakskymmend lubatudKoigile">
+                <img src="https://media.themoviedb.org/t/p/w300_and_h450_bestv2/39wmItIWsg5sZMyRUHLkWBcuVCM.jpg" alt="spiritedaway">
+                <h5 class="film-title"> Spirited Away</h5>
+                <p class="film-time">Laupäev algusega 20:20</p>
+                <button class="osta" href="#">Ota Pilet</button>
+            </div>
+
+            <div class="filterDiv laupaev venekeel ulme marul krimi kakskendkaks kaheksateistPluss">
+                <img src="https://media.themoviedb.org/t/p/w300_and_h450_bestv2/hhvMTxlTZtnCOe7YFhod9uz3m37.jpg" alt="codeeight">
+                <h5 class="film-title">Code 8 Part II</h5>
+                <p class="film-time">Laupäev algusega 22:20</p>
+                <button class="osta" href="#">Ota Pilet</button>
+            </div>
+                    
+            <div class="filterDiv laupaev inglisekeel komoodia romantika kakskendkaks kaheksateistPluss">
+                <img src="https://media.themoviedb.org/t/p/w300_and_h450_bestv2/5qHoazZiaLe7oFBok7XlUhg96f2.jpg" alt="anyonebutyou">
+                <h5 class="film-title">Anyone But You</h5>
+                <p class="film-time">Laupäev algusega 22:30</p>
+                <button class="osta" href="#">Ota Pilet</button>
+            </div>
+                    
+                   
+                
+            
+
+            <div class="filterDiv puhapaev venekeel marul seiklus komoodia kaksteist allaKaksteistKeelatud">
+                <img src="https://media.themoviedb.org/t/p/w300_and_h450_bestv2/95VlSEfLMqeX36UVcHJuNlWEpwf.jpg" alt="argylle">
+                <h5 class="film-title">Argylle</h5>
+                <p class="film-time">Pühapäev algusega 12:00</p>
+                <button class="osta" href="#">Ota Pilet</button>
+            </div>
+
+            <div class="filterDiv puhapaev inglisekeel animatsioon pere komoodia fantaasia romantika seiklus neliteist lubatudKoigile">
+                <img src="https://media.themoviedb.org/t/p/w300_and_h450_bestv2/4Y1WNkd88JXmGfhtWR7dmDAo1T2.jpg" alt="elemental">
+                <h5 class="film-title">Elemental</h5>
+                <p class="film-time">Pühapäev algusega 14:15</p>
+                <button class="osta" href="#">Ota Pilet</button>
+            </div>
+
+            <div class="filterDiv puhapaev inglisekeel ulme seiklus draama seitseteist kaheksateistPluss">
+                <img src="https://media.themoviedb.org/t/p/w300_and_h450_bestv2/f46WvKEsBn98WJbPJcO47ZoKn6B.jpg" alt="Spaceman">
+                <h5 class="film-title">Spaceman</h5>
+                <p class="film-time">Pühapäev algusega 17:00</p>
+                <button class="osta" href="#">Ota Pilet</button>
+            </div>
+
+            <div class="filterDiv puhapaev eestikeel komoodia romantika yheksateist kaheksateistPluss">
+                <img src="https://media.themoviedb.org/t/p/w300_and_h450_bestv2/5qHoazZiaLe7oFBok7XlUhg96f2.jpg" alt="anyonebutyou">
+                <h5 class="film-title">Anyone But You</h5>
+                <p class="film-time">Pühapäev algusega 19:00</p>
+                <button class="osta" href="#">Ota Pilet</button>
+            </div>
+
+            <div class="filterDiv puhapaev inglisekeel komoodia seiklus kakskendyks kaheksateistPluss">
+                <img src="https://media.themoviedb.org/t/p/w300_and_h450_bestv2/iuFNMS8U5cb6xfzi51Dbkovj7vM.jpg" alt="barbie">
+                <h5 class="film-title">Barbie</h5>
+                <p class="film-time">Pühapäev algusega 21:00</p>
+                <button class="osta" href="#">Ota Pilet</button>
+            </div>
+
+            <div class="filterDiv puhapaev inglisekeel ulme marul krimi kakskendkolm kaheksateistPluss">
+                <img src="https://media.themoviedb.org/t/p/w300_and_h450_bestv2/hhvMTxlTZtnCOe7YFhod9uz3m37.jpg" alt="codeeight">
+                <h5 class="film-title">Code 8 Part II</h5>
+                <p class="film-time">Pühapäev algusega 23:00</p>
+                <button class="osta" href="#">Ota Pilet</button>
+            </div>
+                
+          
+    </main>
+
+    <footer class="container">
+        <p class="float-right"><a href="filtrid.html">Tagasi algusesse</a></p>
+        <p>Kertu A. &#169; 2024 <a href="#">Privaatsus</a> <a href="#">Tingimused</a></p>
+    </footer>
+
+    <script src="scripts/kava.js"></script>
+    
+</body>
+</html>

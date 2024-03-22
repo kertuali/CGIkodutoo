@@ -1,0 +1,36 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.float-right {
+    float: right;
+}
+
+.row .btn{
+
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    margin-left: 25rem;
+    margin-right: 2rem;
+}
+
+.row .btn a{
+    text-decoration: none;
+    color: white;
+}
+
+h4{
+   margin-top: 2rem;
+   margin-bottom: 1rem;
+   margin-left: 2rem;
+   margin-right: 2rem;
+}
+
+.row p{
+    font: 2rem;
+    margin-bottom: 2rem;
+    margin-left: 2rem;
+    margin-right: 2rem;
+}
